@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "JavaScript development environmente",
   "scripts": {
+    "prestart":"babel-node buildScripts/startMessage.js",
+    "start":"npm-run-all --parallel security-check open:src lint:watch",
+    "open:src":"babel-node buildScripts/srcServer.js",
+    "security-check":"nsp check",
+    "share":"li --port 3000",
+    "lint":"esw webpack.config.*, src, buildscripts",
+    "lint:watch":"npm run lint -- --watch"
   },
   "author": "Cory House",
   "license": "MIT",
