@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Not working with dojo js</title>
+    </head>
+    <body>
+		<H1>Not working with dojo js</H1>
+        <script data-dojo-config="async: 1"
+            src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+			
+		<script>
+		async function loadScript(url) {
+		  let response = await fetch(url);
+		  let script = await response.text();
+		  eval(script);
+		}
+
+		let scriptUrl = 'https://static.opentok.com/v2.16.2/js/opentok.min.js'
+		loadScript(scriptUrl);
+		</script>
+		
+    </body>
+</html>
